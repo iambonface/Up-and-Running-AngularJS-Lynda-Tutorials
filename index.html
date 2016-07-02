@@ -24,8 +24,34 @@
 
  <body>
  <div class="main" ng-controller="ArtistCtrl">
+ <div class="search">
+    <h1>Artist Directory</h1>
+    <label>Search:</label>
+    <input ng-model="query" placeholder="Search for Artist.." autofocus>
+
+
+    <label class="formgroup">By:
+        <select ng-model="artistOrder">
+            <option value="name">Name</option>
+            <option value="reknown">Reknown</option>
+        
+        </select>
+    </label>
+
+    <label class="formgroup">
+        <input type="radio" ng-model="direction" name="direction" checked>
+        Ascending
+    </label>
+
+    <label class="formgroup">
+        <input type="radio" ng-model="direction" name="direction" value="reverse">
+        Descending
+    </label>
+
+ </div>
+
  	<ul class="artistlist">
-        <li class="artist cf" ng-repeat="item in artists">
+        <li class="artist cf" ng-repeat="item in artists | filter: query | orderBy: artistOrder:direction">
             <img ng-src="images/{{item.shortname}}_tn.jpg"/>
 
             <div class="info">
