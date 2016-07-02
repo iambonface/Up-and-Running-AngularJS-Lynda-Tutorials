@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="Up and Running with Angualr Js ">
+    <meta name="author" content="Bonface Mudiri">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Lynda Up and Running With Angular Js </title>
+
+    <script type="text/javascript" src="lib/angular/angular.min.js"></script>
+    <script type="text/javascript" src="js/controllers.js"></script>
+
+    <!-- stylesheet css -->
+    <link href="css/styles.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+  </head>
+
+ <body>
+ <div class="main" ng-controller="ArtistCtrl">
+ 	<ul class="artistlist">
+        <li class="artist cf" ng-repeat="item in artists">
+            <img ng-src="images/{{item.shortname}}_tn.jpg"/>
+
+            <div class="info">
+                <h2>{{item.name}}</h2>
+                <h3>{{item.reknown}}</h3>
+                
+            </div>
+            
+        </li>
+        
+    </ul>
+ </div>
+
+</body>
+</html>
